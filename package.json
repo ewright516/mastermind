@@ -1,9 +1,13 @@
 {
   "name": "mastermind-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ewright516/mastermind"
+  },
   "scripts": {
     "start": "node ."
   },
