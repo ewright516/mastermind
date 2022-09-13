@@ -6,6 +6,17 @@ const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
 let code = [];
 let guessHistory = [];
 let currentGuess = [];
+let playerName = "";
+
+const setPlayerName = async () => {
+  const name = await inquirer.prompt({
+    name: "player_name",
+    type: "input",
+    message: "What is your name?",
+  });
+
+  return name.player_name;
+};
 
 const setCode = () => {
   // Code is 4 colors long
@@ -100,11 +111,11 @@ const welcome = async () => {
 };
 
 const winner = () => {
-  console.log(`
-    ${chalk.blue("Congratulations player!")} You've won in ${
-    guessHistory.length
-  } guesses!
-  `);
+  console.log(
+    `${chalk.blue(`Congratulations ${playerName}!`)} You've won in ${
+      guessHistory.length
+    } guesses!`
+  );
 };
 
 const main = async () => {
@@ -112,6 +123,7 @@ const main = async () => {
   console.clear();
   const start = await welcome();
   if (!start.start) process.exit(0);
+  playerName = await setPlayerName();
   console.clear();
   let playerWin = false;
   while (!playerWin) {
