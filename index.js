@@ -6,7 +6,7 @@ const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
 let code = [];
 let guessHistory = [];
 let currentGuess = [];
-let playerName = "";
+let playerName = "Player";
 
 const setPlayerName = async () => {
   const name = await inquirer.prompt({
