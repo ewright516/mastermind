@@ -15,7 +15,7 @@ const setPlayerName = async () => {
     message: "What is your name?",
   });
 
-  return name.player_name;
+  return name.player_name.trim();
 };
 
 const setCode = () => {
@@ -124,6 +124,7 @@ const main = async () => {
   const start = await welcome();
   if (!start.start) process.exit(0);
   playerName = await setPlayerName();
+  if (playerName === "") playerName = "Player";
   console.clear();
   let playerWin = false;
   while (!playerWin) {
