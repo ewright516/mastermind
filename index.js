@@ -20,7 +20,7 @@ const setPlayerName = async () => {
 
 const setCode = () => {
   // Code is 4 colors long
-  for (let i = 0; code.length < 4; i++) {
+  while (code.length < 4) {
     let randomNumber = Math.floor(Math.random() * 6);
 
     // the code cannot have 3 or more of the same color
