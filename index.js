@@ -47,7 +47,6 @@ const isDuplicate = (arr, ele) => {
 };
 
 const guessColor = async (pos) => {
-  const choices = colors.filter((color) => !isDuplicate(currentGuess, color));
   const guess = await inquirer.prompt({
     name: "color_guess",
     type: "list",
